@@ -29,3 +29,6 @@ Example:
 ./run samples/inputs/hard_input1 (is going to execute with input file 'hard_input1')
 ./run (is going to execute without an input file, so you need to type one yourself)
 ```
+
+Remark: This program is meant to execute using inputs from 'easy' to 'hard', execute using an input with difficulty
+higher than that at your own risk (just kidding, for now the program may never stop executing if you do so)
