@@ -1,0 +1,11 @@
+#!/bin/sh
+
+g++ -std=c++14 sudoku_solver.cpp -o sudoku_solver
+
+if [ $# -eq 1 ]; then 
+	./sudoku_solver < $1
+else
+	./sudoku_solver
+fi
+
+rm sudoku_solver
