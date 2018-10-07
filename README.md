@@ -3,7 +3,7 @@ A simple C++ program to solve sudoku puzzles
 
 ## Input format
 
-The the grid in input file should be like this:
+The grid in input file should be like this:
 
 ```
 0 8 5 3 1 9 0 0 0
