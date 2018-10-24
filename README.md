@@ -30,5 +30,4 @@ Example:
 ./run (is going to execute without an input file, so you need to type one yourself)
 ```
 
-Remark: This program is meant to execute using inputs from 'easy' to 'hard', execute using an input with difficulty
-higher than that at your own risk (just kidding, for now the program may never stop executing if you do so)
+Remark: This program is meant to execute using inputs matrices with difficulty level up to 'hard', execute using an input with difficulty higher than that ~~at your own risk (just kidding, for now the program may never stop executing if you do so)~~ and the program probably won't find an answer (and will stop executing).

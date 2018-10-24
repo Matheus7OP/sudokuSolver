@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <ctime>
 #include <set>
 
 using namespace std;
@@ -46,6 +47,13 @@ void showResultingMatrix(int matrix[][11]) {
 
 		cout << endl;
 	}
+}
+
+void answerNotFound() {
+	cout << "You know when sometimes we just can't find an answer?" << endl;
+	cout << "Well, this is one of those times. Couldn't find the resulting matrix for that." << endl;
+	cout << "Remember: I'm only able to calculate results for valid matrices with difficulty level up to hard" << endl;
+	cout << "Finishing execution..." << endl;
 }
 
 void removeAllInconsistencies(int line, int column, set<int> &possibilities, int matrix[][11]) {
@@ -138,16 +146,21 @@ void tryMethod3(int matrix[][11], int line, int column) {
 	}
 }
 
+bool timeUp(clock_t startTime) {
+	double executionTime = ((double)(clock() - startTime/CLOCKS_PER_SEC)) / 1000000.0;
+	return (executionTime >= 30.0);
+}
+
 int main() {
-	bool endFilling;
+	clock_t startTime = clock();
 	int matrix[11][11];
+	bool endFilling;
 
 	for(int i = 0; i < 9; i++) {
 		for(int j = 0; j < 9; j++) cin >> matrix[i][j];
 	}
 
-	endFilling = false;
-	while(not endFilling) {
+	while( !endFilling and !timeUp(startTime) ) {
 		endFilling = true;
 
 		for(int i = 0; i < 9; i++) {
@@ -163,6 +176,8 @@ int main() {
 		}
 	}
 
-	showResultingMatrix(matrix);
+	if(endFilling) showResultingMatrix(matrix);
+	else answerNotFound();
+
 	return 0;
 }
